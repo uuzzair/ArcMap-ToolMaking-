@@ -1,0 +1,76 @@
+import arcpy
+import pythonaddins
+
+
+class Button1(object):
+ """Implementation for Test_Addin_addin.button1 (Button)"""
+ def __init__(self):
+ self.enabled = True
+ self.checked = False
+ def onClick(self):
+ # Local variables:
+ Polygons = "Polygons"
+ Polygons_1 = "Polygons_1"
+ ok_shp = "H:\\IGIS\\IGIS SEM 5\\GIS Applications Lab\\toolmaking\\ok3.shp"
+ 
+ 
+ # Process: Merge
+ arcpy.Merge_management("Polygons;Polygons_1", ok_shp, "Name \"Name\" true true false 254 
+Text 0 0 ,First,#,Polygons,Name,-1,-1,Polygons_1,Name,-1,-1;FolderPath \"FolderPath\" true true false 
+254 Text 0 0 ,First,#,Polygons,FolderPath,-1,-1,Polygons_1,FolderPath,-1,-1;SymbolID \"SymbolID\" 
+true true false 10 Long 0 10 ,First,#,Polygons,SymbolID,-1,-1,Polygons_1,SymbolID,-1,-1;AltMode 
+\"AltMode\" true true false 5 Long 0 5 ,First,#,Polygons,AltMode,-1,-1,Polygons_1,AltMode,-1,-1;Base 
+\"Base\" true true false 19 Double 0 0 ,First,#,Polygons,Base,-1,-1,Polygons_1,Base,-1,-1;Clamped 
+\"Clamped\" true true false 5 Long 0 5 ,First,#,Polygons,Clamped,-1,-1,Polygons_1,Clamped,-1,-
+1;Extruded \"Extruded\" true true false 5 Long 0 5 ,First,#,Polygons,Extruded,-1,-
+1,Polygons_1,Extruded,-1,-1;Snippet \"Snippet\" true true false 254 Text 0 0 ,First,#,Polygons,Snippet,-
+1,-1,Polygons_1,Snippet,-1,-1;PopupInfo \"PopupInfo\" true true false 254 Text 0 0 
+,First,#,Polygons,PopupInfo,-1,-1,Polygons_1,PopupInfo,-1,-1;Shape_Leng \"Shape_Leng\" true true 
+false 19 Double 0 0 ,First,#,Polygons,Shape_Leng,-1,-1,Polygons_1,Shape_Leng,-1,-1;Shape_Area 
+\"Shape_Area\" true true false 19 Double 0 0 ,First,#,Polygons,Shape_Area,-1,-
+1,Polygons_1,Shape_Area,-1,-1")
+ pythonaddins.MessageBox("Button1","Title",0)
+ 
+ 
+class Button2(object):
+ """Implementation for Test_Addin_addin.button2 (Button)"""
+ def __init__(self):
+ self.enabled = True
+ self.checked = False
+ def onClick(self):
+ # Local variables:
+ Polygons = "Polygons"
+ Polygons_1 = "Polygons_1"
+ Polygons_2 = "Polygons_2"
+ UNION1_shp = "H:\\IGIS\\IGIS SEM 5\\GIS Applications Lab\\toolmaking\\UNION2.shp"
+ # Process: Union
+ arcpy.Union_analysis("Polygons #;Polygons_1 #;Polygons_2 #", UNION1_shp, "ALL", "", 
+"GAPS")
+ pythonaddins.MessageBox("Button2","Title",0)
+ 
+ 
+class Button3(object):
+ """Implementation for Test_Addin_addin.button3 (Button)"""
+ def __init__(self):
+ self.enabled = True
+ self.checked = False
+ def onClick(self):
+ pythonaddins.MessageBox("Button3","Title",0)
+class Combo5(object):
+ """Implementation for Test_Addin_addin.combobox1 (ComboBox)"""
+ def __init__(self):
+ self.items = ["Opt1", "Opt2"]
+ self.editable = True
+ self.enabled = True
+ self.dropdownWidth = 'WWWWWW'
+ self.width = 'WWWWWW'
+ def onSelChange(self, selection):
+ pass
+ def onEditChange(self, text):
+ pass
+ def onFocus(self, focused):
+ pass
+ def onEnter(self):
+ pass
+ def refresh(self):
+ pass
